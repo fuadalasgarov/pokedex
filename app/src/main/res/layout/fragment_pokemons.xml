@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Search Icon -->
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_search" />
+
+        <!-- Search Input -->
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search Pokemon"
+            android:inputType="text" />
+
+        <!-- Filter Button -->
+        <ImageView
+            android:id="@+id/filterButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_filter" />
+
+    </LinearLayout>
+
+    <!-- Filter Options -->
+    <LinearLayout
+        android:id="@+id/filterOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="8dp">
+
+        <!-- Type Filters -->
+        <CheckBox
+            android:id="@+id/checkboxType1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type 1" />
+
+        <CheckBox
+            android:id="@+id/checkboxType2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type 2" />
+
+        <!-- Add more checkboxes for different types -->
+
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pokemonsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:fadeScrollbars="false"
+        android:padding="6dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/item_pokemon"
+        tools:spanCount="2" />
+
+</LinearLayout>

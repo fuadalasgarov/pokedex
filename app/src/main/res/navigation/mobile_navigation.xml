@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_regions">
+
+    <fragment
+        android:id="@+id/nav_regions"
+        android:name="com.isel.dam.tutorial3.dam_pokedex_part1.ui.region.RegionFragment"
+        android:label="fragment_region"
+        tools:layout="@layout/fragment_region" >
+        <action
+            android:id="@+id/action_nav_regions_to_pokemonsFragment"
+            app:destination="@id/nav_pokemons" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pokemons"
+        android:name="com.isel.dam.tutorial3.dam_pokedex_part1.ui.pokemon.PokemonsFragment"
+        android:label="fragment_pokemons"
+        tools:layout="@layout/fragment_pokemons" >
+        <action
+            android:id="@+id/action_nav_pokemons_to_nav_pokemon_details"
+            app:destination="@id/nav_pokemon_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pokemon_details"
+        android:name="com.isel.dam.tutorial3.dam_pokedex_part1.ui.PokemonDetail.PokemonDetailFragment"
+        android:label="fragment_pokemon_detail" />
+    <fragment
+        android:id="@+id/pokemons"
+        android:name="com.isel.dam.tutorial3.dam_pokedex_part1.ui.pokemon.AllPokemonsFragment"
+        android:label="AllPokemonsFragment" />
+
+</navigation>
